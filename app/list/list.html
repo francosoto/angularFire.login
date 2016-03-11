@@ -1,0 +1,7 @@
+<ul id="">
+	<li ng-repeat="user in users | orderBy:orderBy | filter:searchText">
+ 		{{ user.email }}: {{ user. }}
+	<!-- delete a message using $remove -->
+		<a href="" ng-click="messages.$remove(message)">X</a>
+	</li>
+</ul>

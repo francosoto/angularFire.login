@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+ 
+    <title>AngularJS & Firebase Web App</title>
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+</head>
+ 
+<body ng-controller="SignupCtrl"> 
+    <div class="container">
+        <div class="jumbotron" style="padding-bottom:0px;">
+            <h2>Signup!</h2>
+        </div>
+        <form class="form-signup" role="form">
+            <div class="form-group" ng-class="{'has-error':error,'has-success':success}">
+                <input ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="true" autofocus="">
+                <span id="helpBlockEmail" class="help-block">
+                    {{showMsgEmail}}
+                </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':error,'has-success':success}">
+                <input ng-model="user.name" type="input" class="form-control" placeholder="First Name" required="true" autofocus="">
+                <span id="helpBlockName" class="help-block">
+                    {{showMsgName}}
+                </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':error,'has-success':success}">
+                <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="true">
+                <span id="helpBlockPass" class="help-block">
+                    {{showMsgPass}}
+                </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':error,'has-success':success}">
+                <input ng-model="user.repassword" type="password" class="form-control" placeholder="Repeat Password" required="true">
+                <span id="helpBlockRepass" class="help-block">
+                    {{showMsgRePass}}
+                </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':error,'has-success':success}">
+                <select ng-model="user.country" class="form-control" required="" placeholder="Select a Country">
+                    
+                </select>
+                <span id="helpBlockRepass" class="help-block">
+                    {{showMsgCountry}}
+                </span>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="SignUp($event)">¡Sign up!</button>
+        </form>
+    </div>
+</body>
+</html>
